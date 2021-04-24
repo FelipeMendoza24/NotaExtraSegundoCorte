@@ -3,6 +3,8 @@
 ## DISEÑANDO
 ### Diagrama de clases
 
+![image](https://user-images.githubusercontent.com/78186138/115966633-2e423b00-a4f4-11eb-8fed-6b67f7f62132.png)
+
 ### Diagramas de secuencia
 
 #### 1)
