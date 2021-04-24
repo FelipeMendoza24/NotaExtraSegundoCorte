@@ -2,13 +2,19 @@
 
 ## DISEÑANDO
 ### Diagrama de clases
-* ![image](https://user-images.githubusercontent.com/78186138/115094352-d64b7900-9ee2-11eb-94e9-f05a6c41502a.png)
-### Diagrama de secuencia
-* ![image](https://user-images.githubusercontent.com/78186138/115094925-fe3bdc00-9ee4-11eb-8b25-b7cedfd6809a.png)
+
+### Diagramas de secuencia
+
+#### 1)
+![image](https://user-images.githubusercontent.com/78186138/115965984-1ae1a080-a4f1-11eb-9a33-d9541316b677.png)
+
+#### 2)
+![image](https://user-images.githubusercontent.com/78186138/115966021-567c6a80-a4f1-11eb-8e67-22bf41ef7f16.png)
+
 
 ## EXTENDIENDO
 ### Diagrama de clases
-* ![image](https://user-images.githubusercontent.com/78186138/115094352-d64b7900-9ee2-11eb-94e9-f05a6c41502a.png)
+
 
 ## CONCEPTOS
 ### ¿Cuáles son las acciones los tres momentos importantes de las excepciones? ¿Cuál es el objetivo de cada una? ¿Cómo se implementa en Java cada acción?
