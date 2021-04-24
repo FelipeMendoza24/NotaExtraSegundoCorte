@@ -17,6 +17,15 @@
 ## EXTENDIENDO
 ### Diagrama de clases
 
+![image](https://user-images.githubusercontent.com/78186138/115973822-817cb380-a51d-11eb-927d-cf81c7864076.png)
+
+### De los diseños resultantes del punto I y II, ¿Qué debe cambiar? ¿Qué no debe cambiar?. Justifique su respuesta.
+* Del punto uno, cambia el diseño, porque la duración de una actividad ya no es tan fácil como mirar sus pasos o sus preguntas sino que hay que calcular la duración de todas sus dependencias y sumarle la duración de la actividad. 
+* Del punto dos, no toca cambiar nada porque el método getDuration de actividad, ha cambiado para incluir la duración de las dependencias y aunque el método se comporte diferente, lo que hace el sintetizador es llamar al método getActivityDuration. Entonces estos diagramas no hubiesen tenido que cambiar y el código tampoco.
+### Teniendo en cuenta los cambios necesarios ¿Que fue bueno y que fue malo de su diseño?
+* Algo que fue malo, fue el getEstimatedEndDate(), ya que este podria ser un atributo de cada actividad y no un metodo, lo cual haria todo un poco más facil.
+* Algo bueno del diseño fue que no tuvo que cambiar mucho en el punto dos, esto quiere decir que el diseño fue acertado y se tuvo en cuenta posibles modificaciones o cosas que agregar a futuro.
+
 
 ## CONCEPTOS
 ### ¿Cuáles son las acciones los tres momentos importantes de las excepciones? ¿Cuál es el objetivo de cada una? ¿Cómo se implementa en Java cada acción?
