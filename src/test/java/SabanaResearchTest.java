@@ -43,6 +43,17 @@ public class SabanaResearchTest {
 
         iterations.add(new Iteration("1. Design new model", projects.get(2)));
 
+        // Create activities
+        new NormalActivity("Investigate ARN", Activity.CLOSED_STATE, iterations.get(0));
+        new NormalActivity("Investigate infected people", Activity.CANCELED_STATE, iterations.get(0));
+        new NormalActivity("Test in animals", Activity.CANCELED_STATE, iterations.get(1));
+        new NormalActivity("Test in humans", Activity.CLOSED_STATE, iterations.get(1));
+
+        new NormalActivity("Verify color", Activity.CLOSED_STATE, iterations.get(2));
+        new NormalActivity("Buy massive", Activity.PENDING_STATE, iterations.get(2));
+
+        new NormalActivity("Study previous models", Activity.PENDING_STATE, iterations.get(3));
+
         sabanaResearch = new SabanaResearch(groups);
         // Assert count of plans
         assertEquals(sabanaResearch.countOfGroups(), groups.size(), "The default count of groups");

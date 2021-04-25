@@ -23,6 +23,40 @@ public class Project {
         group.addProject(this);
     }
 
+    public void setDateInit(LocalDate dateInit) {
+        this.dateInit = dateInit;
+    }
+
+    public void setDateEnd(LocalDate dateEnd) {
+        this.dateEnd = dateEnd;
+    }
+
+
+    public boolean isActive() {
+        boolean isActive = true;
+
+        if(LocalDate.now().isAfter(this.dateEnd)){
+            isActive = false;
+        } else {
+            int openActivities = this.countOpenActivities();
+            isActive = openActivities > 0; //si el numero de actividades abirtas es mayor a uno isActive es true.
+        }
+        return isActive;
+    }
+    public int countOpenActivities() {
+        /*int count = 0;
+        for (Iteration i : this.iterations){
+            count += i.countOpenActivities();
+        }
+        return count;
+
+         */
+        return this.iterations
+                .stream()
+                .map(i -> i.countOpenActivities())
+                .reduce(0, (a, b) -> a + b); // Investigar
+    }
+
     public void addIteration(Iteration iteration) {
         this.iterations.add(iteration);
     }
