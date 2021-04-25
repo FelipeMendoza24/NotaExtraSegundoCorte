@@ -1,8 +1,12 @@
 # Felipe Mendoza
 # Parcial 1
-## I. (25%) MEMORIA
+## MEMORIA
 
-<a href="https://ibb.co/WVQw8sZ"><img src="https://i.ibb.co/mNmwZSk/image.png" alt="image" border="0"></a>
+![image](https://user-images.githubusercontent.com/78186138/116011045-7e022e80-a5e8-11eb-976c-a0f156f3a7de.png)
+
+## CODIGO
+
+![image](https://user-images.githubusercontent.com/78186138/116006041-3fac4580-a5cf-11eb-9971-b43c198e2623.png)
 
 ## DISEÑO
 
@@ -22,6 +26,11 @@
 
 
 # Parcial 2
+
+## IMPLEMENTANDO
+
+![image](https://user-images.githubusercontent.com/78186138/116006085-6b2f3000-a5cf-11eb-90d9-926e15901902.png)
+
 
 ## DISEÑANDO
 ### Diagrama de clases
