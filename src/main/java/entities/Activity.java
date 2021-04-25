@@ -32,6 +32,11 @@ public abstract class Activity {
         return this.state.equals(ACTIVE_STATE) || this.state.equals(PENDING_STATE);
     }
 
+    public boolean isClosed() {
+        return this.state.equals(CLOSED_STATE) || this.state.equals(CANCELED_STATE);
+    }
+
+
     /**
      * Get the duration of the activity.
      *

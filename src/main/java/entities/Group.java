@@ -22,4 +22,9 @@ public class Group {
         return (int) this.projects.stream().map(p -> p.isActive()).filter(b -> b).count();
     }
 
+    public int countClosedProjects() {
+
+        return (int) this.projects.stream().map(p -> p.isClosed()).filter(b -> b).count();
+    }
+
 }

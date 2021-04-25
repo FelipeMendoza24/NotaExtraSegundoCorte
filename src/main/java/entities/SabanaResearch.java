@@ -40,4 +40,11 @@ public class SabanaResearch {
 
         return summary;
     }
+    public int countClosedProjects() {
+
+        return this.groups
+                .stream()
+                .map(i -> i.countClosedProjects())
+                .reduce(0, (a, b) -> a + b);
+    }
 }

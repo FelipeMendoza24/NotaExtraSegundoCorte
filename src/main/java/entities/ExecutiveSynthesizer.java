@@ -1,4 +1,8 @@
 package entities;
 
-public class ExecutiveSynthesizer {
+import java.util.List;
+
+public class ExecutiveSynthesizer{
+
+
 }

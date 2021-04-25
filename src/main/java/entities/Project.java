@@ -43,6 +43,17 @@ public class Project {
         }
         return isActive;
     }
+    public boolean isClosed() {
+        boolean isClosed = true;
+
+        if(LocalDate.now().isBefore(this.dateEnd)){
+            isClosed = false;
+        } else {
+            int openActivities = this.countClosedActivities();
+            isClosed = openActivities <= 0; //si el numero de actividades abirtas es mayor a uno isActive es true.
+        }
+        return isClosed;
+    }
     public int countOpenActivities() {
         /*int count = 0;
         for (Iteration i : this.iterations){
@@ -55,6 +66,13 @@ public class Project {
                 .stream()
                 .map(i -> i.countOpenActivities())
                 .reduce(0, (a, b) -> a + b); // Investigar
+
+    }public int countClosedActivities() {
+
+        return this.iterations
+                .stream()
+                .map(i -> i.countClosedActivities())
+                .reduce(0, (a, b) -> a + b);
     }
 
     public void addIteration(Iteration iteration) {

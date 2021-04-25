@@ -18,6 +18,7 @@ public class Iteration {
         project.addIteration(this);
     }
 
+
     public void addActivity(Activity activity) {
         this.activities.add(activity);
     }
@@ -41,6 +42,11 @@ public class Iteration {
         return (int) this.activities.stream().map(a-> a.isActive()).filter(b -> b).count();
         // se cambian a lista de buleanos y filtra los que son true
 
+    }
+
+    public int countClosedActivities() {
+
+        return (int) this.activities.stream().map(p -> p.isClosed()).filter(b -> b).count();
     }
 
     public Duration getDuration() throws SabanaResearchException {
