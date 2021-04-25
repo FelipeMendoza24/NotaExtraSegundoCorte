@@ -24,6 +24,15 @@
 #### Respuesta:
 * **La ocultación de informacion es aislamiento de un objeto, con el fin de proteger las propiedades de este, ya que cada uno de estos tiene funciones definidas para modificarlos, de esta manera quien no tenga estas funciones, no puede modificarlo y asi se protege. Se debe aplicar para evitar futuros problemas ya que este objeto no puede cambiar de forma inesperada, lo que causaria errores en el programa. A traves del nivel de acceso privado para el atributo, y crando getter y setter para este, ya que estas son como las llaves de acceso para poder interactuar con el.**
 
+## BONUS
+### Diagrama de secuencia:
+
+![image](https://user-images.githubusercontent.com/78186138/116011687-d2f37400-a5eb-11eb-9d7a-50937c7f13ab.png)
+
+### Nuevos Tests para probar que funciona la implementacion del diagrama de secuencia:
+
+![image](https://user-images.githubusercontent.com/78186138/116011839-a1c77380-a5ec-11eb-9653-551786efae24.png)
+
 
 # Parcial 2
 
