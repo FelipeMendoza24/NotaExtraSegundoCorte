@@ -130,12 +130,12 @@ caracteristicas pero se le agrega o modifica la funcionalidad del metodo.
 * Esta se aplica con el fin de heredar un metodo de la superclase y utilizar su funcionalidad pero haciendolo mas especifico para lo que la subclase necesita. De esta forma no
 tendremos que crear otro metodo en la subclase, ni cambiar el metodo de la superclase que tal vez no aplique para esta.
 * Para evitar que se sobre-escriba un metodo debemos declararlo como private, para que esta solo sea visible en su propia clase y no en sus subclases y asi no poderla sobre-escribir.
-Si queremos que este metodo sea visible para solo la clase y sus subclases, se utiliza protected. Tmabien se puede usar la palabra reserbada final, para evitar que se sobreescriba ya que las subclases
+Si queremos que este metodo sea visible para solo la clase y sus subclases, se utiliza protected. Tambien se puede usar la palabra reservada final, para evitar que se sobreescriba ya que las subclases
 no lo pueden implementar.
 
 ## BONO 2
 
-* Se implemento todo
+* Se implemento en el codigo y se agregaron dos pruebas
 
 ![image](https://user-images.githubusercontent.com/78186138/116021832-9edd7a80-a60e-11eb-8bf3-2aa92056c02c.png)
 
