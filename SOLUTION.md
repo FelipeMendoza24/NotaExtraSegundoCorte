@@ -133,6 +133,11 @@ tendremos que crear otro metodo en la subclase, ni cambiar el metodo de la super
 Si queremos que este metodo sea visible para solo la clase y sus subclases, se utiliza protected. Tmabien se puede usar la palabra reserbada final, para evitar que se sobreescriba ya que las subclases
 no lo pueden implementar.
 
+## BONO 2
+
+* Se implemento todo
+
+![image](https://user-images.githubusercontent.com/78186138/116021832-9edd7a80-a60e-11eb-8bf3-2aa92056c02c.png)
 
 
 
