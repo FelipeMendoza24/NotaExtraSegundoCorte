@@ -49,7 +49,7 @@ public class Project {
             isActive = false;
         } else {
             int openActivities = this.countOpenActivities();
-            isActive = openActivities > 0; //si el numero de actividades abirtas es mayor a uno isActive es true.
+            isActive = openActivities > 0;
         }
         return isActive;
     }
@@ -60,18 +60,12 @@ public class Project {
             isClosed = false;
         } else {
             int openActivities = this.countClosedActivities();
-            isClosed = openActivities <= 0; //si el numero de actividades abirtas es mayor a uno isActive es true.
+            isClosed = openActivities <= 0;
         }
         return isClosed;
     }
     public int countOpenActivities() {
-        /*int count = 0;
-        for (Iteration i : this.iterations){
-            count += i.countOpenActivities();
-        }
-        return count;
 
-         */
         return this.iterations
                 .stream()
                 .map(i -> i.countOpenActivities())

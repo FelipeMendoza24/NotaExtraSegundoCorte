@@ -18,7 +18,7 @@ public class StudentSynthesizer implements ISynthesizer{
         String name = null;
 
         Duration d = Duration.ZERO;
-        for (Student s : this.students){
+        for (Student s : this.students){//Se busca en students
             d=s.getDuration();
             name = s.getName();
             summary.add("Student: "+ name);

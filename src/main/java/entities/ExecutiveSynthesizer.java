@@ -25,7 +25,7 @@ public class ExecutiveSynthesizer implements ISynthesizer{
         if(this.iterations == null){
             throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_PROJECT);
         }
-        Duration d = Duration.ZERO;
+        Duration d = Duration.ZERO; //Igual que el otro
         for (Iteration i : this.iterations){
             d=i.getDuration();
             objective = i.getGoal();

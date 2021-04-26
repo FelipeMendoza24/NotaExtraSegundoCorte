@@ -36,12 +36,6 @@ public abstract class Activity {
         return this.state.equals(CLOSED_STATE) || this.state.equals(CANCELED_STATE);
     }
 
-
-    /**
-     * Get the duration of the activity.
-     *
-     * @return
-     */
     public abstract Duration getDuration() throws SabanaResearchException;
 
 }

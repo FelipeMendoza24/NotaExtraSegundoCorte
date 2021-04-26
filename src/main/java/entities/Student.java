@@ -4,7 +4,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class Student {
-    private List<Activity> activitiesToDo;
+    private List<Activity> activitiesToDo; //Actividades
     private String name;
 
     public String getName() {
