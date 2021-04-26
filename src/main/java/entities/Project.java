@@ -23,6 +23,9 @@ public class Project {
         group.addProject(this);
     }
 
+    public void addIteration(Iteration iteration) {
+        this.iterations.add(iteration);
+    }
 
     public void setDateInit(LocalDate dateInit) {
         this.dateInit = dateInit;
@@ -82,9 +85,7 @@ public class Project {
                 .reduce(0, (a, b) -> a + b);
     }
 
-    public void addIteration(Iteration iteration) {
-        this.iterations.add(iteration);
-    }
+
 
     public Duration getDuration() throws SabanaResearchException {
 

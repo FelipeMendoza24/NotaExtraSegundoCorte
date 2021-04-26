@@ -43,7 +43,7 @@ public class Iteration {
          * es lo mismo que arriba
          */
         return (int) this.activities.stream().map(a-> a.isActive()).filter(b -> b).count();
-        // se cambian a lista de buleanos y filtra los que son true
+
 
     }
 

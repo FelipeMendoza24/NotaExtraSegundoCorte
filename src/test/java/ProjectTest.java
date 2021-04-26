@@ -253,17 +253,17 @@ public class ProjectTest {
         eSProject = new Project(faker.team().name(), LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), group);
         Iteration iteration = new Iteration(faker.team().name(), eSProject);
 
-        // Create a Normal Activity
+
         NormalActivity normalActivity = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration);
         normalActivity.addStep(new Step(faker.team().name(), Duration.ofDays(1)));
 
-        // Create a Documented Activity
+
         NormalActivity activity = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, null);
         activity.addStep(new Step(faker.team().name(), Duration.ofDays(1)));
         DocumentedActivity documentedActivity = new DocumentedActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration, activity);
         documentedActivity.addQuestion(new Question(Question.EASY_QUESTION, faker.team().name(), Duration.ofDays(1)));
 
-        // Create a Documented Activity without normal activity
+
         DocumentedActivity documentedActivity2 = new DocumentedActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration, null);
         documentedActivity2.addQuestion(new Question(Question.EASY_QUESTION, faker.team().name(), Duration.ofDays(1)));
     }
@@ -272,17 +272,17 @@ public class ProjectTest {
         sSProject = new Project(faker.team().name(), LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), group);
         Iteration iteration = new Iteration(faker.team().name(), sSProject);
 
-        // Create a Normal Activity
+
         NormalActivity normalActivity = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration);
         normalActivity.addStep(new Step(faker.team().name(), Duration.ofDays(1)));
 
-        // Create a Documented Activity
+
         NormalActivity activity = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, null);
         activity.addStep(new Step(faker.team().name(), Duration.ofDays(1)));
         DocumentedActivity documentedActivity = new DocumentedActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration, activity);
         documentedActivity.addQuestion(new Question(Question.EASY_QUESTION, faker.team().name(), Duration.ofDays(1)));
 
-        // Create a Documented Activity with normal activity without steps
+
         NormalActivity activity2 = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, null);
         DocumentedActivity documentedActivity2 = new DocumentedActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration, activity2);
         documentedActivity2.addQuestion(new Question(Question.EASY_QUESTION, faker.team().name(), Duration.ofDays(1)));
