@@ -23,6 +23,7 @@ public class Project {
         group.addProject(this);
     }
 
+
     public void setDateInit(LocalDate dateInit) {
         this.dateInit = dateInit;
     }
@@ -31,6 +32,12 @@ public class Project {
         this.dateEnd = dateEnd;
     }
 
+    public List<Iteration> getIterations(){
+        return iterations;
+    }
+    public Group getGroup(){
+        return group;
+    }
 
     public boolean isActive() {
         boolean isActive = true;
@@ -91,5 +98,8 @@ public class Project {
         return d;
     }
 
+    public List<String> summarize(ISynthesizer s) throws SabanaResearchException{
+        return s.synthezise();
+    }
 
 }

@@ -23,6 +23,9 @@ public class ProjectTest {
     private Project badFormedProject5; // Project where a documented activity hasn't normal activity
     private Project badFormedProject6; // Project where a documented activity with normal activity hasn't steps
 
+    private Project eSProject; // ExecutiveSynthesizer Project
+    private Project sSProject; // StudentSynthesizer Project
+
     public ProjectTest() {
 
         faker = new Faker(new Locale("en-US"));
@@ -38,6 +41,8 @@ public class ProjectTest {
         setupBadFormedProject4();
         setupBadFormedProject5();
         setupBadFormedProject6();
+        setupESProject();
+        setupSSProject();
     }
 
     @Test
@@ -97,6 +102,22 @@ public class ProjectTest {
     public void shouldThrowsSabanaResearchExceptionWhenDocumentedActivityWithNormalActivityWithoutSteps() {
 
         SabanaResearchException exception = assertThrows(SabanaResearchException.class, () -> badFormedProject6.getDuration());
+        assertEquals(SabanaResearchException.BAD_FORMED_NORMAL_ACTIVITY, exception.getMessage());
+    }
+
+    @Test
+    @DisplayName("GIVEN a ExecutiveSynthesizer with a documented activity without normal activity WHEN get duration THEN get SabanaResearchException")
+    public void shouldThrowsSabanaResearchExceptionWhenIsExecutiveSynthesizer() {
+
+        SabanaResearchException exception = assertThrows(SabanaResearchException.class, () -> eSProject.getDuration());
+        assertEquals(SabanaResearchException.BAD_FORMED_DOCUMENTED_ACTIVITY_WITHOUT_NORMAL_QUESTION, exception.getMessage());
+    }
+
+    @Test
+    @DisplayName("GIVEN a StudentSynthesizer with a documented activity with normal activity without steps WHEN get duration THEN get SabanaResearchException")
+    public void shouldThrowsSabanaResearchExceptionWhenIsStudentSynthesizer() {
+
+        SabanaResearchException exception = assertThrows(SabanaResearchException.class, () -> sSProject.getDuration());
         assertEquals(SabanaResearchException.BAD_FORMED_NORMAL_ACTIVITY, exception.getMessage());
     }
 
@@ -227,4 +248,45 @@ public class ProjectTest {
         DocumentedActivity documentedActivity2 = new DocumentedActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration, activity2);
         documentedActivity2.addQuestion(new Question(Question.EASY_QUESTION, faker.team().name(), Duration.ofDays(1)));
     }
+    private void setupESProject() {
+        Group group = new Group(faker.team().name());
+        eSProject = new Project(faker.team().name(), LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), group);
+        Iteration iteration = new Iteration(faker.team().name(), eSProject);
+
+        // Create a Normal Activity
+        NormalActivity normalActivity = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration);
+        normalActivity.addStep(new Step(faker.team().name(), Duration.ofDays(1)));
+
+        // Create a Documented Activity
+        NormalActivity activity = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, null);
+        activity.addStep(new Step(faker.team().name(), Duration.ofDays(1)));
+        DocumentedActivity documentedActivity = new DocumentedActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration, activity);
+        documentedActivity.addQuestion(new Question(Question.EASY_QUESTION, faker.team().name(), Duration.ofDays(1)));
+
+        // Create a Documented Activity without normal activity
+        DocumentedActivity documentedActivity2 = new DocumentedActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration, null);
+        documentedActivity2.addQuestion(new Question(Question.EASY_QUESTION, faker.team().name(), Duration.ofDays(1)));
+    }
+    private void setupSSProject() {
+        Group group = new Group(faker.team().name());
+        sSProject = new Project(faker.team().name(), LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), group);
+        Iteration iteration = new Iteration(faker.team().name(), sSProject);
+
+        // Create a Normal Activity
+        NormalActivity normalActivity = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration);
+        normalActivity.addStep(new Step(faker.team().name(), Duration.ofDays(1)));
+
+        // Create a Documented Activity
+        NormalActivity activity = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, null);
+        activity.addStep(new Step(faker.team().name(), Duration.ofDays(1)));
+        DocumentedActivity documentedActivity = new DocumentedActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration, activity);
+        documentedActivity.addQuestion(new Question(Question.EASY_QUESTION, faker.team().name(), Duration.ofDays(1)));
+
+        // Create a Documented Activity with normal activity without steps
+        NormalActivity activity2 = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, null);
+        DocumentedActivity documentedActivity2 = new DocumentedActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration, activity2);
+        documentedActivity2.addQuestion(new Question(Question.EASY_QUESTION, faker.team().name(), Duration.ofDays(1)));
+
+    }
+
 }

@@ -18,6 +18,9 @@ public class Iteration {
         project.addIteration(this);
     }
 
+    public String getGoal(){
+        return this.getGoal();
+    }
 
     public void addActivity(Activity activity) {
         this.activities.add(activity);
