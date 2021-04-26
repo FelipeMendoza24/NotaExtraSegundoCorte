@@ -140,7 +140,9 @@ no lo pueden implementar.
 ![image](https://user-images.githubusercontent.com/78186138/116021832-9edd7a80-a60e-11eb-8bf3-2aa92056c02c.png)
 
 
+## NGROK
 
+* Profe, el ngrok no me abre. Descargue el zip de la pagina pero a la hora de ejecutarlo, no me sale nada. Descargue las dos versiones para Windows y ninguna me funcionó.
 
 
 
